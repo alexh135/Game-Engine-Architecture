@@ -6,6 +6,8 @@ public class throwPortal : MonoBehaviour
 {
     public GameObject startPortal;
     public GameObject endPortal;
+    public AudioSource player;
+    public AudioClip portalShoot;
 
 
     void Start()
@@ -20,11 +22,13 @@ public class throwPortal : MonoBehaviour
         {
             ShootPortal(startPortal);
             startPortal.SetActive(true);
+            player.PlayOneShot(portalShoot);
         }
         if (Input.GetMouseButtonDown(1))
         {
             ShootPortal(endPortal);
             endPortal.SetActive(true);
+            player.PlayOneShot(portalShoot);
         }
     }
 
